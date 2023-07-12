@@ -4,12 +4,12 @@ const { useQueue } = require("discord-player");
 module.exports = {
   category: "music-player",
   data: new SlashCommandBuilder()
-    .setName("skip")
-    .setDescription("skip the song!"),
+    .setName("shuffle")
+    .setDescription("Shuffle the queue!"),
   async execute(interaction) {
     const queue = useQueue(interaction.guild.id);
-    queue.node.skip();
+    queue.tracks.shuffle();
 
-    return interaction.reply("Skipping current track");
+    return interaction.reply("Shuffled Queue");
   },
 };
