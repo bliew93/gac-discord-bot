@@ -21,3 +21,4 @@ Discord bot to do stuff
     - Rewind (5sec or specified time)
     - Next Song
     - Previous Song
+- ChatGPT Integration
