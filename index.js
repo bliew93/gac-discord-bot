@@ -1,7 +1,8 @@
+require("dotenv").config();
+
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const { Player } = require("discord-player");
 
-const { token } = require("./config.json");
 const eventLoader = require("./loaders/eventLoader");
 const commandLoader = require("./loaders/commandLoader");
 
@@ -22,4 +23,4 @@ client.player.extractors.loadDefault();
 commandLoader(client);
 eventLoader(client, player);
 
-client.login(token);
+client.login(process.env.TOKEN);
