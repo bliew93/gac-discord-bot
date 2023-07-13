@@ -13,9 +13,10 @@ module.exports = {
     const queue = useQueue(interaction.guild.id);
     const position = interaction.options.getInteger("position");
     const track = queue.tracks.toArray()[position];
+    const trackTitle = track.title;
 
     queue.removeTrack(position - 1);
 
-    return interaction.reply(`Removing ${track.title} from the queue`);
+    return interaction.reply(`Removing ${trackTitle} from the queue`);
   },
 };
