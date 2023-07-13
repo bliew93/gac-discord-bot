@@ -51,6 +51,17 @@ module.exports = (client) => {
             client.once(event.name, (...args) => event.execute(...args));
           } else {
             client.on(event.name, (...args) => event.execute(...args));
+
+            client.on("disconnect", function(erMsg, code) {
+              console.log(
+                "----- Bot disconnected from Discord with code",
+                code,
+                "for reason:",
+                erMsg,
+                "-----"
+              );
+              client.connect();
+            });
           }
           break;
       }
